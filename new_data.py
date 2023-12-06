@@ -12,7 +12,10 @@ img = keras.preprocessing.image.load_img(
     #"C:/Users/tiago/Desktop/tcc/validar/corretas/22572__bhvbb_27_butt-6.png",
     #"C:/Users/tiago/Desktop/tcc/validar/corretas/22572__b_36_butt_2_dwr_top-3.png",
     #"C:/Users/tiago/Desktop/tcc/validar/incorretas/22653__bc_36_r-3.png",
-    "C:/Users/tiago/Desktop/tcc/validar/incorretas/22653__bhvb_15_l-6.png",
+    #"C:/Users/tiago/Desktop/tcc/validar/incorretas/22653__bhvb_15_l-6.png",
+    "D:/Dev/tcc/super-guacamole/ItemImages/corretos/22572__2bowl_bhvbb_60-11.png",
+    #"D:/Dev/Azure DevOps/item-thumbnail-generator/thumbnails/31398__b600/31398__b600-2.png",
+    #"D:/Dev/Azure DevOps/item-thumbnail-generator/thumbnails/31395__wbc_lt42x30_12/31395__wbc_lt42x30_12-8.png",
     target_size=image_size
 )
 

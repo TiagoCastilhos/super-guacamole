@@ -161,6 +161,3 @@ cython_debug/
 
 ItemImages/
 .idea
-save_at*
-my_model.keras
-model.png

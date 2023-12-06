@@ -1,6 +1,30 @@
 import tensorflow as tf
+from matplotlib import pyplot as plt
 from tensorflow import keras
 from keras import layers
+
+
+def plots(history):
+    if hasattr(history, 'history'):
+        history = history.history
+    plt.figure(figsize=(14, 4))
+    plt.subplot(1, 2, 1)
+    plt.plot(history['loss'], '.-', label='Train loss')
+    if 'val_loss' in history.keys():
+        plt.plot(history['val_loss'], '.-', label='Val loss')
+    plt.xlabel('Epochs')
+    plt.legend()
+    plt.yscale('log')
+    plt.grid(which='both')
+    plt.subplot(1, 2, 2)
+    plt.plot(history['accuracy'], '.-', label='Train accuracy')
+    plt.xlabel('Epochs')
+    if 'val_accuracy' in history.keys():
+        plt.plot(history['val_accuracy'], '.-', label='Val accuracy')
+    plt.legend()
+    plt.grid()
+    plt.show()
+    
 
 image_size = (240, 240)
 batch_size = 32 #12
@@ -90,9 +114,11 @@ def train_model():
         metrics=["accuracy"],
     )
 
-    model.fit(
+    history = model.fit(
        train_ds, epochs=epochs, callbacks=callbacks, validation_data=val_ds, batch_size=128
     )
+
+    plots(history)
 
     model.save("my_model.keras")
 
